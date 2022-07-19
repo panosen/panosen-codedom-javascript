@@ -80,5 +80,10 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// 数组里面的对象自动换行
         /// </summary>
         public bool DataArrayItemBreakLine { get; set; }
+
+        /// <summary>
+        /// DataObject Key 单引号 或者 双引号
+        /// </summary>
+        public string DataObjectKeyQuotation { get; set; }
     }
 }

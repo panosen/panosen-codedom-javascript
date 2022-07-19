@@ -34,7 +34,12 @@ namespace Panosen.CodeDom.JavaScript.Engine
                 {
                     var dataArrayItem = enumerator.Current;
 
-                    codeWriter.Write(options.IndentString).Write($"{dataArrayItem.Key.Value}: ");
+                    codeWriter.Write(options.IndentString);
+
+                    codeWriter.Write(options.DataObjectKeyQuotation);
+                    codeWriter.Write(dataArrayItem.Key.Value);
+                    codeWriter.Write(options.DataObjectKeyQuotation);
+                    codeWriter.Write(": ");
 
                     GenerateDataItem(dataArrayItem.Value, codeWriter, options);
 
