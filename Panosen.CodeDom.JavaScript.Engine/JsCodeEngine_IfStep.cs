@@ -12,11 +12,11 @@ namespace Panosen.CodeDom.JavaScript.Engine
         {
             //if
             {
-                codeWriter.Write(options.IndentString).Write(KEYWORD_IF).Write(Marks.WHITESPACE)
-                    .Write(Marks.LEFT_BRACKET).Write(ifStepBuilder.Expression ?? string.Empty).Write(Marks.RIGHT_BRACKET).Write(Marks.WHITESPACE).WriteLine(Marks.LEFT_BRACE);
+                codeWriter.Write(options.IndentString).Write(Keywords.IF).Write(Marks.WHITESPACE)
+                    .Write(Marks.LEFT_BRACKET).Write(ifStepBuilder.Condition ?? string.Empty).Write(Marks.RIGHT_BRACKET).Write(Marks.WHITESPACE).WriteLine(Marks.LEFT_BRACE);
                 options.PushIndent();
 
-                GenerateStepOrCollectionList(ifStepBuilder.StepBuilders, codeWriter, options);
+                GenerateStepOrCollectionList(ifStepBuilder.Steps, codeWriter, options);
 
                 options.PopIndent();
                 codeWriter.Write(options.IndentString).Write(Marks.RIGHT_BRACE);
@@ -28,13 +28,13 @@ namespace Panosen.CodeDom.JavaScript.Engine
                 {
                     foreach (var elseIfStepBuilder in ifStepBuilder.ElseIfStepBuilders)
                     {
-                        codeWriter.Write(Marks.WHITESPACE).Write(KEYWORD_ELSE).Write(Marks.WHITESPACE)
-                            .Write(KEYWORD_IF).Write(Marks.WHITESPACE)
+                        codeWriter.Write(Marks.WHITESPACE).Write(Keywords.ELSE).Write(Marks.WHITESPACE)
+                            .Write(Keywords.IF).Write(Marks.WHITESPACE)
                             .Write(Marks.LEFT_BRACKET).Write(elseIfStepBuilder.Condition ?? string.Empty)
                             .Write(Marks.RIGHT_BRACKET).Write(Marks.WHITESPACE).WriteLine(Marks.LEFT_BRACE);
                         options.PushIndent();
 
-                        GenerateStepOrCollectionList(elseIfStepBuilder.StepBuilders, codeWriter, options);
+                        GenerateStepOrCollectionList(elseIfStepBuilder.Steps, codeWriter, options);
 
                         options.PopIndent();
                         codeWriter.Write(options.IndentString).Write(Marks.RIGHT_BRACE);
@@ -46,10 +46,10 @@ namespace Panosen.CodeDom.JavaScript.Engine
             {
                 if (ifStepBuilder.ElseStepBuilder != null)
                 {
-                    codeWriter.Write(Marks.WHITESPACE).Write(KEYWORD_ELSE).Write(Marks.WHITESPACE).WriteLine(Marks.LEFT_BRACE);
+                    codeWriter.Write(Marks.WHITESPACE).Write(Keywords.ELSE).Write(Marks.WHITESPACE).WriteLine(Marks.LEFT_BRACE);
                     options.PushIndent();
 
-                    GenerateStepOrCollectionList(ifStepBuilder.ElseStepBuilder.StepBuilders, codeWriter, options);
+                    GenerateStepOrCollectionList(ifStepBuilder.ElseStepBuilder.Steps, codeWriter, options);
 
                     options.PopIndent();
                     codeWriter.Write(options.IndentString).Write(Marks.RIGHT_BRACE);

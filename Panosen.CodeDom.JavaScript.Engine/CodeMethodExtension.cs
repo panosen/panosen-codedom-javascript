@@ -15,9 +15,6 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// <summary>
         /// TransformText
         /// </summary>
-        /// <param name="codeMethod"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
         public static string TransformText(this CodeMethod codeMethod, GenerateOptions options = null)
         {
             var builder = new StringBuilder();

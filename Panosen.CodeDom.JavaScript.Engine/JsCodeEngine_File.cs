@@ -25,9 +25,9 @@ namespace Panosen.CodeDom.JavaScript.Engine
                 }
             }
 
-            if (codeFile.StepBuilders != null && codeFile.StepBuilders.Count > 0)
+            if (codeFile.Steps != null && codeFile.Steps.Count > 0)
             {
-                foreach (var stepBuilder in codeFile.StepBuilders)
+                foreach (var stepBuilder in codeFile.Steps)
                 {
                     GenerateStepOrCollection(stepBuilder, codeWriter, options);
                 }

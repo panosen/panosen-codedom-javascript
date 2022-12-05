@@ -13,7 +13,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// </summary>
         public void GenerateReturnSortedDataObjectStep(ReturnSortedDataObjectStep returnSortedDataObjectStepBuilder, CodeWriter codeWriter, GenerateOptions options)
         {
-            codeWriter.Write(options.IndentString).Write(KEYWORD_RETURN).Write(Marks.WHITESPACE);
+            codeWriter.Write(options.IndentString).Write(Keywords.RETURN).Write(Marks.WHITESPACE);
 
             GenerateSortedDataObject(returnSortedDataObjectStepBuilder.SortedDataObject, codeWriter, options);
         }

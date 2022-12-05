@@ -6,7 +6,7 @@ namespace Panosen.CodeDom.JavaScript
     /// <summary>
     /// 方法
     /// </summary>
-    public class CodeMethod : DataItem, IStepBuilderCollection
+    public class CodeMethod : DataItem, IStepCollectionHost
     {
         /// <summary>
         /// 方法名
@@ -33,12 +33,12 @@ namespace Panosen.CodeDom.JavaScript
         /// </summary>
         public bool InLamdaStyle { get; set; }
 
-        #region IStepBuilderCollection Members
+        #region IStepCollectionHost Members
 
         /// <summary>
-        /// IStepBuilderCollection.StepBuilders
+        /// IStepCollectionHost.StepCollection
         /// </summary>
-        public List<StepOrCollection> StepBuilders { get; set; }
+        public StepCollection StepCollection { get; set; }
 
         #endregion
     }

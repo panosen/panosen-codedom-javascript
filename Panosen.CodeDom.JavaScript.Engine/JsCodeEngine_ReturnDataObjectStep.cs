@@ -13,7 +13,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// </summary>
         public void GenerateReturnDataObjectStep(ReturnDataObjectStep returnDataObjectStepBuilder, CodeWriter codeWriter, GenerateOptions options)
         {
-            codeWriter.Write(options.IndentString).Write(KEYWORD_RETURN).Write(Marks.WHITESPACE);
+            codeWriter.Write(options.IndentString).Write(Keywords.RETURN).Write(Marks.WHITESPACE);
 
             GenerateDataObject(returnDataObjectStepBuilder.DataObject, codeWriter, options);
         }

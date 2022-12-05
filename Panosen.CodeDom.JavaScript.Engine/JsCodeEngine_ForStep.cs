@@ -13,7 +13,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// </summary>
         public void GenerateForStep(ForStep forStepBuilder, CodeWriter codeWriter, GenerateOptions options)
         {
-            codeWriter.Write(options.IndentString).Write(KEYWORD_FOR).Write(Marks.WHITESPACE).Write(Marks.LEFT_BRACKET)
+            codeWriter.Write(options.IndentString).Write(Keywords.FOR).Write(Marks.WHITESPACE).Write(Marks.LEFT_BRACKET)
                 .Write(forStepBuilder.Start ?? string.Empty).Write(Marks.SEMICOLON).Write(Marks.WHITESPACE)
                 .Write(forStepBuilder.Middle ?? string.Empty).Write(Marks.SEMICOLON).Write(Marks.WHITESPACE)
                 .Write(forStepBuilder.End ?? string.Empty)
@@ -21,7 +21,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
 
             options.PushIndent();
 
-            GenerateStepOrCollectionList(forStepBuilder.StepBuilders, codeWriter, options);
+            GenerateStepOrCollectionList(forStepBuilder.Steps, codeWriter, options);
 
             options.PopIndent();
 

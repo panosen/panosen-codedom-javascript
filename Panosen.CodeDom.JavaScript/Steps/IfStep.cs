@@ -14,7 +14,7 @@ namespace Panosen.CodeDom.JavaScript
         /// <summary>
         /// if(${Condition})
         /// </summary>
-        public string Expression { get; set; }
+        public string Condition { get; set; }
 
         /// <summary>
         /// else if

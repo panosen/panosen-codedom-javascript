@@ -23,12 +23,12 @@ namespace Panosen.CodeDom.JavaScript.Engine
 
             if (codeMethod.IsAsync)
             {
-                codeWriter.Write(KEYWORD_ASYNC).Write(Marks.WHITESPACE);
+                codeWriter.Write(Keywords.ASYNC).Write(Marks.WHITESPACE);
             }
 
             if (!codeMethod.InLamdaStyle)
             {
-                codeWriter.Write(KEYWORD_FUNCTION).Write(Marks.WHITESPACE);
+                codeWriter.Write(Keywords.FUNCTION).Write(Marks.WHITESPACE);
             }
 
             if (codeMethod.Name != null)
@@ -79,7 +79,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
                 options.PopIndent();
             }
 
-            if (codeMethod.StepBuilders != null && codeMethod.StepBuilders.Count > 0)
+            if (codeMethod.StepCollection != null)
             {
                 //如果codeMethod有子方法，那么在【子方法结束之后，步骤开始之前】，插入一个空行，用于分隔
                 if (codeMethod.CodeMethods != null && codeMethod.CodeMethods.Count > 0)
@@ -89,10 +89,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
 
                 options.PushIndent();
 
-                foreach (var stepBuilder in codeMethod.StepBuilders)
-                {
-                    GenerateStepOrCollection(stepBuilder, codeWriter, options);
-                }
+                GenerateStepOrCollection(codeMethod.StepCollection, codeWriter, options);
 
                 options.PopIndent();
             }

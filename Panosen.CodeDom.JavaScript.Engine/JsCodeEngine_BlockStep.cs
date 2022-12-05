@@ -16,7 +16,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
             codeWriter.Write(options.IndentString).WriteLine(Marks.LEFT_BRACE);
             options.PushIndent();
 
-            GenerateStepOrCollectionList(blockStepBuilder.StepBuilders, codeWriter, options);
+            GenerateStepOrCollectionList(blockStepBuilder.Steps, codeWriter, options);
 
             options.PopIndent();
             codeWriter.Write(options.IndentString).WriteLine(Marks.RIGHT_BRACE);
