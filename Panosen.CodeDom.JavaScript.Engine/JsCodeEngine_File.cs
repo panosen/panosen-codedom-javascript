@@ -11,9 +11,6 @@ namespace Panosen.CodeDom.JavaScript.Engine
         /// <summary>
         /// GenerateFile
         /// </summary>
-        /// <param name="codeFile"></param>
-        /// <param name="codeWriter"></param>
-        /// <param name="options"></param>
         public void GenerateFile(JsCodeFile codeFile, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (codeFile == null) { return; }
@@ -32,7 +29,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
             {
                 foreach (var stepBuilder in codeFile.StepBuilders)
                 {
-                    GenerateStepBuilderOrCollection(stepBuilder, codeWriter, options);
+                    GenerateStepOrCollection(stepBuilder, codeWriter, options);
                 }
             }
         }

@@ -91,7 +91,7 @@ namespace Panosen.CodeDom.JavaScript.Engine
 
                 foreach (var stepBuilder in codeMethod.StepBuilders)
                 {
-                    GenerateStepBuilderOrCollection(stepBuilder, codeWriter, options);
+                    GenerateStepOrCollection(stepBuilder, codeWriter, options);
                 }
 
                 options.PopIndent();

@@ -9,7 +9,7 @@ namespace Panosen.CodeDom.JavaScript
     /// <summary>
     /// js code file
     /// </summary>
-    public class JsCodeFile : StepBuilderCollection
+    public class JsCodeFile : StepCollection
     {
         /// <summary>
         /// 命名空间

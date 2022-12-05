@@ -38,7 +38,7 @@ namespace Panosen.CodeDom.JavaScript
         /// <summary>
         /// IStepBuilderCollection.StepBuilders
         /// </summary>
-        public List<StepBuilderOrCollection> StepBuilders { get; set; }
+        public List<StepOrCollection> StepBuilders { get; set; }
 
         #endregion
     }
